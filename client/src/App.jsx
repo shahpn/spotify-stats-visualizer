@@ -56,10 +56,12 @@ function Callback({ setToken }) {
 }
 
 function Dashboard({ token, handleLogout }) {
+  console.log("DASHBOARD: token =", token);
   const [profile, setProfile] = useState(null);
   const [artists, setArtists] = useState([]);
 
   useEffect(() => {
+    console.log("useEffect running, token:", token);
     if (!token) return;
 
     // Fetch profile info
