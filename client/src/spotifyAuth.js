@@ -13,5 +13,6 @@ export function getSpotifyLoginUrl(clientId, redirectUri, scope) {
     code_challenge,
   });
 
-  return 'https://accounts.spotify.com/authorize?${params.toString()}';
+  return `https://accounts.spotify.com/authorize?${params.toString()}`;
+
 }
