@@ -13,19 +13,6 @@ function Home({ handleLogin }) {
       <h1>Spotify Stats Visualizer</h1>
       <p className="subtitle">Discover your top genres, artists, and tracks with beautiful charts!</p>
       <button className="login-btn" onClick={handleLogin}>
-        {/* <img
-          src="https://developer.spotify.com/images/guidelines/design/icon3@2x.png"
-          alt="Spotify logo"
-          style={{
-            height: 22,
-            verticalAlign: "middle",
-            marginRight: 10,
-            marginBottom: 3,
-            background: "white",
-            borderRadius: "50%",
-            padding: 2,
-          }}
-        /> */}
         Login with Spotify
       </button>
       <footer>
@@ -80,14 +67,20 @@ function Dashboard({ token, handleLogout }) {
       headers: { Authorization: `Bearer ${token}` },
     })
       .then((res) => res.json())
-      .then(setProfile);
+      .then(data => {
+      console.log("Profile API response:", data);
+      setProfile(data);
+    });
 
     // Fetch top 5 artists from last 30 days
     fetch("https://api.spotify.com/v1/me/top/artists?time_range=short_term&limit=5", {
       headers: { Authorization: `Bearer ${token}` },
     })
       .then((res) => res.json())
-      .then(data => setArtists(data.items || []));
+      .then(data => {
+      console.log("Artists API response:", data);
+      setArtists(data.items || []);
+    });
   }, [token]);
 
  return (
