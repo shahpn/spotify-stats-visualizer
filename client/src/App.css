@@ -1,10 +1,14 @@
 body {
-  background: linear-gradient(120deg, #1db954 0%, #191414 100%);
+  display: flex;
+  align-items: center;
+  justify-content: center;
   min-height: 100vh;
+  background: linear-gradient(120deg, #1db954 0%, #191414 100%);
   margin: 0;
   font-family: 'Inter', 'Arial', sans-serif;
   color: #fff;
 }
+
 
 .container {
   max-width: 400px;
@@ -14,10 +18,6 @@ body {
   box-shadow: 0 6px 24px rgba(0,0,0,0.19);
   padding: 44px 32px 30px 32px;
   text-align: center;
-  height: 200px;
-  display: flex;
-  align-items: center;
-  justify-content: center;
 }
 
 h1 {
