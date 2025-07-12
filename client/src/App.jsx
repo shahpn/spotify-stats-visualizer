@@ -1,5 +1,6 @@
 import { useState, useEffect } from 'react';
 import { getSpotifyLoginUrl } from './spotifyAuth';
+import './App.css'
 
 const CLIENT_ID = import.meta.env.VITE_SPOTIFY_CLIENT_ID;
 const REDIRECT_URI = import.meta.env.VITE_REDIRECT_URI;
