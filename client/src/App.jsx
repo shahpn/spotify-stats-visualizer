@@ -44,6 +44,7 @@ function Callback({ setToken }) {
       })
         .then((res) => res.json())
         .then((data) => {
+          console.log("Token exchange response:", data);
           setToken(data.access_token);
           localStorage.setItem("spotify_token", data.access_token);
           console.log("Set token:", data.access_token)
