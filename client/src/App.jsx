@@ -32,7 +32,7 @@ function App() {
       {!token ? (
         <button className="login-btn" onClick={handleLogin}>
           <img
-            src="https://developer.spotify.com/images/guidelines/design/icon3@2x.png"
+            src="C:\Users\shahp\spotify-stats-visualizer-1\client\src\assets\full-logo-framed.svg"
             alt="Spotify logo"
             style={{ height: 22, verticalAlign: 'middle', marginRight: 10 }}
           />
