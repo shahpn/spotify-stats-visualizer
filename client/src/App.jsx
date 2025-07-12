@@ -30,6 +30,7 @@ function Callback({ setToken }) {
     const urlParams = new URLSearchParams(search);
     const code = urlParams.get("code");
     const verifier = localStorage.getItem("spotify_pkce_verifier");
+    console.log("Verifier in callback:", verifier);
     if (code && verifier) {
       fetch("https://accounts.spotify.com/api/token", {
         method: "POST",
@@ -145,6 +146,9 @@ function App() {
 
   function handleLogin() {
     window.location = getSpotifyLoginUrl(CLIENT_ID, REDIRECT_URI, SCOPE);
+    // After creating pkceChallenge in getSpotifyLoginUrl:
+    console.log("Generated code_verifier:", code_verifier);
+
   }
   function handleLogout() {
     setToken("");
