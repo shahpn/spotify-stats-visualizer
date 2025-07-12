@@ -6,13 +6,6 @@ body {
   color: #fff;
 }
 
-#root {
-  min-height: 100vh;
-  display: flex;
-  align-items: center;
-  justify-content: center;
-}
-
 .container {
   max-width: 400px;
   margin: 90px auto;
