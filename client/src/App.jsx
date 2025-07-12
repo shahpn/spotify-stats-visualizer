@@ -90,26 +90,31 @@ function Dashboard({ token, handleLogout }) {
       .then(data => setArtists(data.items || []));
   }, [token]);
 
-  return (
-    <div className="container">
-      {profile && (
-        <>
-          <img
-            src={profile.images?.[0]?.url}
-            alt="Profile"
-            style={{
-              width: 72,
-              height: 72,
-              borderRadius: "50%",
-              marginBottom: 20,
-              border: "2px solid #1db954",
-              background: "#fff"
-            }}
-          />
-          <h2>Welcome, {profile.display_name}!</h2>
-        </>
-      )}
-      <h3>Top 5 Artists (Last 30 Days)</h3>
+ return (
+  <div className="container">
+    {/* Show loading state if profile is not loaded yet */}
+    {!profile ? (
+      <p>Loading your Spotify profile...</p>
+    ) : (
+      <>
+        <img
+          src={profile.images?.[0]?.url}
+          alt="Profile"
+          style={{
+            width: 72,
+            height: 72,
+            borderRadius: "50%",
+            marginBottom: 20,
+            border: "2px solid #1db954",
+            background: "#fff"
+          }}
+        />
+        <h2>Welcome, {profile.display_name}!</h2>
+      </>
+    )}
+
+    <h3>Top 5 Artists (Last 30 Days)</h3>
+    {artists && artists.length > 0 ? (
       <ol style={{ textAlign: "left", margin: "0 auto", maxWidth: 250 }}>
         {artists.map((artist) => (
           <li key={artist.id} style={{ marginBottom: 14, display: "flex", alignItems: "center" }}>
@@ -129,9 +134,13 @@ function Dashboard({ token, handleLogout }) {
           </li>
         ))}
       </ol>
-      <button className="logout-btn" onClick={handleLogout}>Logout</button>
-    </div>
-  );
+    ) : (
+      <p>No artists found. Try listening to more music on Spotify!</p>
+    )}
+    <button className="logout-btn" onClick={handleLogout}>Logout</button>
+  </div>
+);
+
 }
 
 function App() {
