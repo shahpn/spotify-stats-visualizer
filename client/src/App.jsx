@@ -31,11 +31,11 @@ function App() {
       </p>
       {!token ? (
         <button className="login-btn" onClick={handleLogin}>
-          <img
+          {/* <img
             src="C:\Users\shahp\spotify-stats-visualizer-1\client\src\assets\full-logo-framed.svg"
             alt="Spotify logo"
             style={{ height: 22, verticalAlign: 'middle', marginRight: 10 }}
-          />
+          /> */}
           Login with Spotify
         </button>
       ) : (
