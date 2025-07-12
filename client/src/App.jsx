@@ -46,6 +46,7 @@ function Callback({ setToken }) {
         .then((data) => {
           setToken(data.access_token);
           localStorage.setItem("spotify_token", data.access_token);
+          console.log("Set token:", data.access_token)
           navigate("/dashboard");
         });
     } else {
