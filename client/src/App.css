@@ -1,16 +1,15 @@
-body {
-  background: linear-gradient(120deg, #1db954 0%, #191414 100%);
+body, #root {
   min-height: 100vh;
   margin: 0;
-  font-family: 'Inter', 'Arial', sans-serif;
-  color: #fff;
 }
 
 #root {
-  min-height: 100vh;
   display: flex;
   align-items: center;
   justify-content: center;
+  background: linear-gradient(120deg, #1db954 0%, #191414 100%);
+  font-family: 'Inter', 'Arial', sans-serif;
+  color: #fff;
 }
 
 .container {

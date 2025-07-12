@@ -34,7 +34,15 @@ function App() {
           <img
             src="https://developer.spotify.com/images/guidelines/design/icon3@2x.png"
             alt="Spotify logo"
-            style={{ height: 22, verticalAlign: 'middle', marginRight: 10 }}
+            style={{
+              height: 22,
+              verticalAlign: "middle",
+              marginRight: 10,
+              marginBottom: 3,
+              background: "white",
+              borderRadius: "50%",
+              padding: 2,
+            }}
           />
           Login with Spotify
         </button>
