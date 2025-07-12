@@ -144,10 +144,9 @@ function Dashboard({ token, handleLogout }) {
 function App() {
   const [token, setToken] = useState(() => localStorage.getItem("spotify_token"));
 
-  function handleLogin() {
-    window.location = getSpotifyLoginUrl(CLIENT_ID, REDIRECT_URI, SCOPE);
-    // After creating pkceChallenge in getSpotifyLoginUrl:
-    console.log("Generated code_verifier:", code_verifier);
+  async function handleLogin() {
+    const url = await getSpotifyLoginUrl(CLIENT_ID, REDIRECT_URI, SCOPE);
+    window.location = url;
 
   }
   function handleLogout() {
