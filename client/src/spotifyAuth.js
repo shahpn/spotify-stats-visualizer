@@ -2,6 +2,7 @@ import pkceChallenge from "pkce-challenge";
 
 export function getSpotifyLoginUrl(clientId, redirectUri, scope) {
   const { code_challenge, code_verifier } = pkceChallenge();
+  console.log("Generated code_verifier (login):", code_verifier);
   localStorage.setItem("spotify_pkce_verifier", code_verifier);
 
   const params = new URLSearchParams({
